@@ -11,16 +11,16 @@ export default function Hero() {
   };
 
   return (
-    <div className="">
+    <div className="pt-36">
       {/* Hero Content */}
-<div className="relative z-10 flex flex-col  text-white justify-center px-8 pt-72 pb-10">
+<div className="relative z-10 flex flex-col  text-white justify-center px-8 pt-72">
 
 
 
         {/* Search Form */}
         <form
           onSubmit={handleSearch}
-          className="w-full max-w-xl bg-black/10 backdrop-blur-md h-14 lg:h-16 rounded-full p-2 flex items-center mb-2.5"        >
+          className="w-full max-w-xl bg-black/10 backdrop-blur-md h-14 lg:h-16 rounded-full p-2 flex items-center mx-24"        >
           <Input
             type="text"
             placeholder="Search your course..."
@@ -38,7 +38,7 @@ export default function Hero() {
           </Button>
         </form>
       </div >
-      <div className="relative flex flex-col text-white justify-center px-10 pt-2.5">
+      <div className="relative flex flex-col text-white justify-center px-10 pt-2.5 mx-24">
         <div className="flex gap-4">
           <Button className="bg-cyan-950 text-white rounded-full w-40 h-15">Get Started</Button>
           <Button className="flex items-center justify-center gap-2 border-4 border-cyan-950 rounded-full px-12 h-10 bg-white text-cyan-950">

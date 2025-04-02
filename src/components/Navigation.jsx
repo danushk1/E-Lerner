@@ -3,6 +3,7 @@ import { Globe } from "lucide-react";
 import Notificationimg from "@/assets/icon/notification.png";
 import { Link } from "react-router";
 import { useEffect,useState  } from "react";
+import elernerLogo from "@/assets/hero/elerner_logo.jpg";
 
 function Navigation() {
   const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default is 'English'
@@ -16,7 +17,7 @@ function Navigation() {
     <nav className="z-10 bg-stone-100 flex  items-center justify-between px-8 text-green-900 py-4">
       <div className="flex items-center space-x-8">
         <Link to="/" className="text-2xl font-bold ">
-          E-LERNER
+         <img src={elernerLogo} alt="" srcset="" className="w-[200px] h-[40px] object-cover" />
         </Link>
 </div>
 <div className="hidden md:flex space-x-6">
