@@ -4,10 +4,13 @@ import Notificationimg from "@/assets/icon/notification.png";
 import { Link } from "react-router";
 import { useEffect,useState  } from "react";
 import elernerLogo from "@/assets/hero/elerner_logo.jpg";
+import { useSelector } from "react-redux";
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/clerk-react";
 
 function Navigation() {
   const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default is 'English'
 
+const userSlice = useSelector((state) => state.user)
 
 
 
@@ -23,7 +26,7 @@ function Navigation() {
 <div className="hidden md:flex space-x-6">
         <div className="hidden md:flex space-x-6">
           <Link to={`/home`} className="transition-colors">
-            Home
+           {/* {userSlice.user.name} */} Home
           </Link>
         </div> <div className="hidden md:flex space-x-6">
           <Link to={`/`} className="transition-colors">
@@ -52,12 +55,28 @@ function Navigation() {
             </select>
           </div> */}
         </Button>
-        <Button  asChild className="bg-green-900 text-white rounded-full w-24 h-10">
+        {/* <Button  asChild className="bg-green-900 text-white rounded-full w-24 h-10">
           <Link to="/sign-in">LogIn</Link>
         </Button>
         <Button asChild variant="ghost" className="border-4 border-green-900 rounded-full w-24 h-10">
           <Link to="/sign-up">Sign In</Link>
-        </Button>
+        </Button> */}
+<SignedOut>
+          <Button variant="ghost" asChild>
+            <Link to="/sign-in">Log In</Link>
+          </Button>
+          <Button asChild>
+            <Link to="/sign-up">Sign Up</Link>
+          </Button>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+          <Button asChild>
+            <Link to="/account">My Account</Link>
+          </Button>
+        </SignedIn>
+
+
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
       <button type="button" className="flex text-sm bg-stone-100" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
        
